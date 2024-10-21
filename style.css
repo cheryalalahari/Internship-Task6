@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Prociono", serif;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("./assets/spices-4185324_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.nav{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    /* background-color: black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.login-btn button{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+.login-btn button:hover{
+    background-color: white;
+    color: black;
+}
+.login-popup{
+    position: absolute;
+    width: 360px;
+    height: 390px;
+    background: transparent;
+    border: 2px solid rgba(91, 66, 66, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    transition: transform .5s ease,height .2s ease; 
+    z-index: 1000;
+    
+}
+.login-popup .form{
+    width: 100%;
+    padding: 40px;
+
+}
+.login-popup.active{
+    height: 460px;
+    display: flex;
+    align-items: center;
+} 
+.login-popup .form#Login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.login-popup.active .form#Login{
+    transition: none;
+    transform: translateX(-400px);;
+} 
+.login-popup .form#Register{
+    position: absolute;
+    transform: none;
+    transform: translateX(400px);
+}
+.login-popup.active .form#Register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: black;
+    font-size: 25px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.form h2{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+.input{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+.input input{
+    width: 100%;
+    height: 40%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: white;
+    
+}
+.input ::placeholder{
+    color: white;
+}
+.input .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 20px;
+    color: wheat;
+    
+}
+.remember{
+    font-size: 17px;
+    color: white;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember label input{
+    accent-color: white;
+    margin-right: 3px;
+}
+.remember a{
+    color: white;
+    text-decoration: none;
+}
+.remember a:hover{
+    text-decoration: underline;
+    color: darkblue;
+}
+.btn{
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: white;
+    border: 1.5px solid darkblue ;
+    color: black;
+}
+.register{
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register a{
+    color: white;
+    text-decoration: none;
+
+}
+.register a:hover{
+    text-decoration: underline;
+    color: darkblue;
+}
+.form h1{
+    font-size: 50px;
+    font-weight: 900;
+    color: whitesmoke;
+    text-align: center;
+}
+#search-form{
+    display: flex;
+    outline: none;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border-radius: 35px;
+    background-color: white;
+}
+#search-form input{
+    width: 30vw;
+    border-radius: 35px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+#search-button{
+    border-radius: 35px;
+    border: none;
+    height: 50px;
+    width: 120px;
+    background-color: darksalmon;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    bottom: 0px 2px 3px 0px rgba(161, 129, 99, 0.2);
+}
+
+#results{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 20px;
+}
+.recipe-item{
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 5 15 0 rgba(0, 0, 0, .35);
+    color: black;
+    background-image: linear-gradient(to right, #f0e7f5 0%, #b7cff5 100%);
+    margin-top: 50px;
+    margin-left: 80px;
+}
+.recipe-item img{
+    max-width: 100%;
+    height: auto;
+}
+.recipe-item a{
+    color: darkblue;
+}
+.Recipes{
+    display: none; 
+    position: fixed;
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); 
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Content {
+    background-color: #f0caf8;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+}
+
+
+#recipe-content h2 {
+    margin-bottom: 10px;
+}
+
+#recipe-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#recipe-content p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+

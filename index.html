@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Recipe Finder App</title>
+</head>
+<body>
+    <!-- header   -->
+    <header>
+        <nav>
+        <div class="nav">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="" width="200">
+            </div>
+            <div class="login-btn">
+                <button type="button">Login</button>
+            </div>
+        </nav>
+
+        <!-- loginPopup Form  -->
+             <div class="login-popup">
+        
+                <spam class="icon-close"><ion-icon name="close"></ion-icon></spam>
+                <!-- Login Form  -->
+                <div class="form" id="Login">
+                    <h2>Login</h2>
+                    <form action="#">
+                        <div class="input">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="text" placeholder="Email" required id="email" autocomplete="off">
+                        </div>
+                        <div class="input">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" placeholder="Password" required id="password" autocomplete="off">
+                        </div>
+                        <div class="remember">
+                            <label><input type="checkbox">Remember me</label>
+                            <a href="#">Forgot Password</a>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <div class="register">
+                            <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                        </div>
+                    </form>
+                </div>
+           
+                <!-- Registration Form  -->
+                <div class="form" id="Register">
+                    <h2>Registration</h2>
+                    <form action="#">
+                        <div class="input">
+                            <span class="icon"><ion-icon name="person"></ion-icon></span>
+                            <input type="text" placeholder="UserName" required id="username" autocomplete="off">
+                        </div>
+                        <div class="input">
+                            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                            <input type="text" placeholder="Email" required id="Email" autocomplete="off">
+                        </div>
+                        <div class="input">
+                            <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                            <input type="password" placeholder="Password" required id="Password" autocomplete="off">
+                        </div>
+                        <div class="remember">
+                            <label><input type="checkbox">I agree to the terms & conditions</label>
+                            
+                        </div>
+                        <button type="submit" class="btn">Register</button>
+                        <div class="register">
+                            <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+               
+            <!-- Search Recipes Form  -->
+            <section class="form">
+                <h1 class="heading">Search Recipe</h1>
+                <div id="search-form">
+                    <input type="text" placeholder="Search for recipes..." required id="query" autocomplete="off">
+                    <button type="button" id="search-button" onclick="searchRecipe()">Search</button>
+                </div>
+        
+                
+        
+            </section>
+        </header>
+
+        <!-- Recipe Results  -->
+
+        <div id="results"></div>
+
+
+        <!-- Recipe Details  -->
+
+        <div id="recipe-details" class="Recipes">
+            <div class="Content">
+                <span class="close">&times;</span>
+                <div id="recipe-content"></div>
+            </div>
+        </div>
+
+
+    <script src="./script.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
